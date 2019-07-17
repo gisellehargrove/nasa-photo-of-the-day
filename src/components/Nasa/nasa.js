@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import APOD from '../APOD/apod.js';
 
 function Nasa(props) {
-  const [data, setData] = useState(props);
 
   return (
     <div className="nasa-container">
-      
+
       <div className="title-container">
         <h1 className="title">{props.data.title}</h1>
       </div>

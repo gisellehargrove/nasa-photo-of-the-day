@@ -13,7 +13,7 @@ function App() {
   const month = date.getMonth().toString();
   const day = date.getDay().toString();
   dateQuery = dateQuery + year + '-' + month + '-' + day;
-  const url = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY' + dateQuery;
+  const url = 'https://api.nasa.gov/planetary/apod?api_key=MvTYifXGaCr3kTNQR1mIh3j4GbHHzKTYjhkMn9gn' + dateQuery;
 
   const onChange = (date) => {
     setDate(date);
@@ -23,7 +23,7 @@ function App() {
     axios.get(url).then((response) => {
       setData(response.data);
     });
-  }, [date]);
+  }, [date, url]);
 
   return (
     <div className="App">
