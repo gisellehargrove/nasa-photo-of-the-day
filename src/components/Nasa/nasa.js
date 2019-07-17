@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 function Nasa(props) {
+  const [data, setData] = useState(props);
 
-  console.log(props)
   return (
     <div className="nasa-container">
       Nasa Component
@@ -21,7 +21,6 @@ function Nasa(props) {
       <div className="date-container">
         <span className="date">{props.data.date}</span>
       </div>
-
     </div>
   )
 };
