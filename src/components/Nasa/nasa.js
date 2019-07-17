@@ -6,7 +6,7 @@ function Nasa(props) {
 
   return (
     <div className="nasa-container">
-      Nasa Component
+      
       <div className="title-container">
         <h1 className="title">{props.data.title}</h1>
       </div>
