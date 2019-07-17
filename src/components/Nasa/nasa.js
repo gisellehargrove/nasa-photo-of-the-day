@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import APOD from '../APOD/apod.js';
 
 function Nasa(props) {
   const [data, setData] = useState(props);
@@ -9,10 +10,8 @@ function Nasa(props) {
       <div className="title-container">
         <h1 className="title">{props.data.title}</h1>
       </div>
-      <div className="img-container">
-        <img src={props.data.url}></img>
-        <iframe src={props.data.url}></iframe>
-      </div>
+
+      <APOD data={props.data} />
       <div className="explanation-container">
         <p className="explanation">
           {props.data.explanation}
