@@ -23,7 +23,7 @@ function App() {
     axios.get(url).then((response) => {
       setData(response.data);
     });
-  }, []);
+  }, [date]);
 
   return (
     <div className="App">
