@@ -8,14 +8,19 @@ function App() {
 
   const [data, setData] = useState({});
   const [date, setDate] = useState(new Date());
+  let dateQuery = '&date=';
+  const year = date.getFullYear().toString();
+  const month = date.getMonth().toString();
+  const day = date.getDay().toString();
+  dateQuery = dateQuery + year + '-' + month + '-' + day;
+  const url = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY' + dateQuery;
 
   const onChange = (date) => {
-    console.log(date);
     setDate(date);
   }
 
   useEffect(() => {
-    axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY').then((response) => {
+    axios.get(url).then((response) => {
       setData(response.data);
     });
   }, []);
