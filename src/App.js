@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import DatePicker from 'react-date-picker';
 import axios from 'axios';
 import Nasa from './components/Nasa/nasa.js';
 
 function App() {
 
   const [data, setData] = useState({});
+  const [date, setDate] = useState(new Date());
+
+  const onChange = (date) => {
+    console.log(date);
+    setDate(date);
+  }
 
   useEffect(() => {
     axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY').then((response) => {
-      console.log(response.data);
       setData(response.data);
     });
   }, []);
@@ -21,6 +27,7 @@ function App() {
         app! Have fun 🚀!
 
       </p>
+      <DatePicker onChange={onChange} value={date} />
       <Nasa data={data} />
     </div>
   );
