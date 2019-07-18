@@ -28,7 +28,11 @@ function App() {
 
   return (
     <div className="App">
-      <DatePicker onChange={onChange} value={date} />
+      <DatePicker
+        onChange={onChange}
+        value={date}
+        clearIcon={null} />
+      
       <Nasa data={data} />
     </div>
   );

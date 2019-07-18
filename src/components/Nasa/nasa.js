@@ -1,6 +1,6 @@
 import React from 'react';
 import APOD from '../APOD/apod.js';
-import { Container, Header, Segment } from 'semantic-ui-react';
+import { Container, Header, Segment, Divider } from 'semantic-ui-react';
 
 function Nasa(props) {
 
@@ -12,17 +12,21 @@ function Nasa(props) {
 
       <Segment>
         <APOD data={props.data} />
+
+        <Divider section />
+
+        <Container>
+          <p className="explanation">
+            {props.data.explanation}
+          </p>
+        </Container>
+
+        <Divider section />
+
+        <Container>
+          <span className="date">Photo taken on: {props.data.date}</span>
+        </Container>
       </Segment>
-
-      <Container>
-        <p className="explanation">
-          {props.data.explanation}
-        </p>
-      </Container>
-
-      <Container>
-        <span className="date">{props.data.date}</span>
-      </Container>
     </div>
   )
 };
