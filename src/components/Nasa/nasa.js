@@ -6,11 +6,9 @@ function Nasa(props) {
 
   return (
     <div className="nasa-container">
-      <Segment>
-        <Container>
-          <Header as="h1">{props.data.title}</Header>
-        </Container>
-      </Segment>
+      <Container>
+        <Header as="h1">{props.data.title}</Header>
+      </Container>
 
       <Segment>
         <APOD data={props.data} />

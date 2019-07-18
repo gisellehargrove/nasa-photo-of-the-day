@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react';
-import { Loader, Dimmer, Segment } from 'semantic-ui-react';
+import { Loader, Dimmer } from 'semantic-ui-react';
 
 function APOD(props) {
   const [media, setMedia] = useState(<img src={props.data.url} alt=""></img>)
