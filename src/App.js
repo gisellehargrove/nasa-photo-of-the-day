@@ -3,6 +3,8 @@ import "./App.css";
 import DatePicker from 'react-date-picker';
 import axios from 'axios';
 import Nasa from './components/Nasa/nasa.js';
+import Paper from '@material-ui/core/Paper';
+
 
 
 function App() {
@@ -27,14 +29,16 @@ function App() {
   }, [date, url]);
 
   return (
-    <div className="App">
-      <DatePicker
-        onChange={onChange}
-        value={date}
-        clearIcon={null} />
-      
-      <Nasa data={data} />
-    </div>
+    <Paper>
+      <div className="App">
+        <DatePicker
+          onChange={onChange}
+          value={date}
+          clearIcon={null} />
+
+        <Nasa data={data} />
+      </div>
+    </Paper>
   );
 }
 

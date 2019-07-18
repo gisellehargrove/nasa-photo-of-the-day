@@ -1,13 +1,16 @@
 import React from 'react';
 import APOD from '../APOD/apod.js';
 import { Container, Header, Segment, Divider } from 'semantic-ui-react';
+import Typography from '@material-ui/core/Typography';
 
 function Nasa(props) {
 
   return (
     <div className="nasa-container">
       <Container>
-        <Header as="h1">{props.data.title}</Header>
+        <Typography variant="h1" component="h2" gutterBottom>
+          {props.data.title}
+        </Typography>
       </Container>
 
       <Segment>
