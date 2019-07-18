@@ -31,3 +31,12 @@
     transform: rotate(360deg);
   }
 }
+
+.react-date-picker {
+  margin: 25px;
+}
+
+img {
+  height: 500px;
+  width: 90%;
+}
