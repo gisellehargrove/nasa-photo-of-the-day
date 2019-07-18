@@ -1,6 +1,6 @@
 import React from 'react';
 import APOD from '../APOD/apod.js';
-import { Container, Header, Segment, Divider } from 'semantic-ui-react';
+import { Container, Segment, Divider } from 'semantic-ui-react';
 import Typography from '@material-ui/core/Typography';
 
 function Nasa(props) {
