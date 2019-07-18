@@ -16,13 +16,11 @@ function Nasa(props) {
         <APOD data={props.data} />
       </Segment>
 
-      <Segment>
-        <Container>
-          <p className="explanation">
-            {props.data.explanation}
-          </p>
-        </Container>
-      </Segment>
+      <Container>
+        <p className="explanation">
+          {props.data.explanation}
+        </p>
+      </Container>
 
       <Container>
         <span className="date">{props.data.date}</span>

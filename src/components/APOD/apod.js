@@ -1,4 +1,5 @@
 import React, { useState,useEffect } from 'react';
+import { Loader, Dimmer, Segment } from 'semantic-ui-react';
 
 function APOD(props) {
   const [media, setMedia] = useState(<img src={props.data.url} alt=""></img>)
@@ -14,7 +15,18 @@ function APOD(props) {
   }, [props.data.media_type, media, iframe, image]);
 
 
-  if (!props.data.url) return <h3>Loading...</h3>;
+  if (!props.data.url) {
+    return (
+      <Dimmer
+        active
+        style={{height: '400px'}}>
+        <Loader
+          content="Loading"
+          size="massive" />
+      </Dimmer>
+    )
+  };
+
   return (
     <div className="img-container">
       {media}
