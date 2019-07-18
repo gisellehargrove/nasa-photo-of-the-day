@@ -10,6 +10,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
+import AsteroidCard from './components/AsteroidCard/asteroidCard.js';
 
 function TabContainer(props) {
   return (
@@ -34,6 +35,8 @@ function App() {
 
   const [data, setData] = useState({});
   const [date, setDate] = useState(new Date());
+  const [asteroidData, setAsteroidData] = useState({});
+  const [asteroids, setAsteroids] = useState([]);
   let dateQuery = '&date=';
   const year = date.getFullYear().toString();
   const month = date.getMonth().toString();
@@ -59,7 +62,12 @@ function App() {
     });
 
     axios.get('https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&api_key=MvTYifXGaCr3kTNQR1mIh3j4GbHHzKTYjhkMn9gn').then((response) => {
-      console.log(response.data);
+      setAsteroidData(response.data.near_earth_objects['2015-09-07']);
+
+      setAsteroids(response.data.near_earth_objects['2015-09-07'].map((asteroid, index) => {
+        return <AsteroidCard data={asteroid} key={ index }/>
+      }));
+      console.log(asteroids);
     });
   }, [date, url]);
 
@@ -86,7 +94,7 @@ function App() {
         }
         {
           value === 1 && <TabContainer>
-
+            {asteroids}
 
           </TabContainer>
         }
